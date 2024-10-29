@@ -172,6 +172,7 @@ exports.updateProfile = catchAsyncError(async (req, res, next) => {
     }
 
     let avatar;
+<<<<<<< HEAD
     let BASE_URL = process.env.BACKEND_URL;
     if(process.env.NODE_ENV === "production"){
         BASE_URL = `${req.protocol}://${req.get('host')}`
@@ -179,6 +180,11 @@ exports.updateProfile = catchAsyncError(async (req, res, next) => {
 
     if(req.file){
         avatar = `${BASE_URL}/uploads/user/${req.file.originalname}`
+=======
+
+    if(req.file){
+        avatar = `${process.env.BACKEND_URL}/uploads/user/${req.file.originalname}`
+>>>>>>> fc5bcd4 (Initial code commit)
         newUserData = {...newUserData,avatar }
     }
 
